@@ -8,7 +8,7 @@ export const Footer = () => {
           <img src= {assets.logo} alt="Logo" />
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem maxime a repellat explicabo ipsam excepturi ea odit adipisci in cupiditate. Laudantium, obcaecati? Exercitationem ex maiores molestiae alias, deleniti quia reiciendis?
           </p>
-          <div>
+          <div className='footer-social-icons'>
             <img src= {assets.facebook_icon}alt="facebook_icon" />
             <img src= {assets.twitter_icon}alt="twitter_icon" />
             <img src= {assets.linkedin_icon}alt="linkedin_icon" />
