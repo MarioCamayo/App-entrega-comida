@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import './LoginPoput.css';
 import { assets } from './../../assets/frontend_assets/assets';
+
+
 export const LoginPoput = ({setShowLogin} ) => {
 
-  const [currState, setCurrState] = useState('Login')
+  const [currState, setCurrState] = useState('Iniciar sesión')
 
   return (
 
@@ -36,9 +38,9 @@ export const LoginPoput = ({setShowLogin} ) => {
           </div>
           {
             currState === 'Login' ?
-            <p> Create Una Cuenta?<span onClick={()=>setCurrState('Sign Up')}>Click here</span></p>
+            <p> Create Una Cuenta?<span onClick={()=>setCurrState('Sign Up')}>Haz clic aquí</span></p>
             :
-            <p>Alredy  have an account <span onClick={()=>setCurrState('Login')}>Login here</span></p>
+            <p>Ya tengo una cuenta <span onClick={()=>setCurrState('Login')}>Inicie sesión aquí</span></p>
           }
 
             

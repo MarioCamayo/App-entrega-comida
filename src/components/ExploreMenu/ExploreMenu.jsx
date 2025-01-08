@@ -4,8 +4,8 @@ import './ExploreMenu.css'
 export const ExploreMenu = ( {category, setCategory}) => {
   return (
     <div className='explore-menu' id='explore-menu'>
-      <h1>Explore our menu</h1>
-      <p className='explore-menu-test'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam quis sequi architecto laboriosam ex. Rerum corrupti velit non, voluptate nisi vero dolor, adipisci odio, magni expedita vel nam necessitatibus laborum!
+      <h1>Explora nuestro menú</h1>
+      <p className='explore-menu-test'>🍔 Tu comida favorita, a un clic de distancia. ¡Pide, disfruta y saborea el momento! 🍕✨
       </p>
       <div className='explore-menu-list'>
         {

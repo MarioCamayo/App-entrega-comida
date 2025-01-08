@@ -4,10 +4,10 @@ export const Header = () => {
   return (
     <div className='header'>
       <div className='header-contents'>
-        <h2>Order you favourite food here</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, eligendi impedit odio, ullam est ipsum id eum, quas sunt dolorem magnam quae voluptatem doloremque ex dolorum architecto iusto aliquid eius.
+        <h2>Pide tu comida favorita aquí</h2>
+        <p>Descubre la mejor comida a un clic de distancia. Explora tus platillos favoritos, personalízalos y haz tu pedido en segundos. ¡Del sabor al disfrute, nosotros nos encargamos del resto!.
         </p>
-        <button>View menu</button>
+        <button>Ver menú</button>
       </div>
     </div>
   )

@@ -1,12 +1,13 @@
 import './Footer.css';
 import { assets } from '../../assets/frontend_assets/assets';
+
 export const Footer = () => {
   return (
     <div className="footer" id="footer">
       <div className='footer-content'>
         <div className='footer-content-left'>
           <img src= {assets.logo} alt="Logo" />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem maxime a repellat explicabo ipsam excepturi ea odit adipisci in cupiditate. Laudantium, obcaecati? Exercitationem ex maiores molestiae alias, deleniti quia reiciendis?
+          <p>¡Tu comida, cuando la necesites! Ya sea para una noche en casa o un almuerzo rápido, nosotros nos encargamos de que cada bocado sea especial. Porque sabemos que la buena comida siempre merece estar al alcance de tu mano.
           </p>
           <div className='footer-social-icons'>
             <img src= {assets.facebook_icon}alt="facebook_icon" />
@@ -18,9 +19,9 @@ export const Footer = () => {
            
 
         <div className='footer-content-center'>
-          <h2>COMPANY</h2>
+          <h2>EMPRESA</h2>
           <ul>
-            <li>Inicio</li>
+            <li>Inicio</li> 
             <li>Acerca de</li>
             <li>Entregas</li>
             <li>Política de privacidad</li>
