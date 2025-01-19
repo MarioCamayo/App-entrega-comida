@@ -1,11 +1,25 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import './PlaceOrders.css'
 import { StoreContext } from '../../context/StoreContext'
 import { Navigate } from 'react-router-dom'
 
 export const PlaceOrders = () => {
 
-  const {getTotalCartAmount} = useContext(StoreContext)
+  const {getTotalCartAmount, token, food_list, cartItems, url} = useContext(StoreContext)
+  
+  const [data, setData] = useState({
+     firstName:'',
+     lastName:'',
+     email:'',
+     street:'',
+     city:'',
+     state:'',
+     zipcode:'',
+     country:'',
+     phone:''
+
+  })
+
   return (
     <form className='place-order'>
       <div className='place-order-left'>
