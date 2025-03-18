@@ -1,12 +1,20 @@
 import './Footer.css';
 import { assets } from '../../assets/frontend_assets/assets';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
     <div className="footer" id="footer">
       <div className='footer-content'>
         <div className='footer-content-left'>
-          <img src= {assets.logo} alt="Logo" />
+
+          <Link to='/'>
+            <img 
+                className='footer-logo'
+                src= {assets.logo_tu_comida_saludable2} alt="Logo"
+              />
+          </Link>
+
           <p>¡Tu comida, cuando la necesites! Ya sea para una noche en casa o un almuerzo rápido, nosotros nos encargamos de que cada bocado sea especial. Porque sabemos que la buena comida siempre merece estar al alcance de tu mano.
           </p>
           <div className='footer-social-icons'>

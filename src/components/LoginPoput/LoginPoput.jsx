@@ -11,7 +11,7 @@ export const LoginPoput = ({setShowLogin} ) => {
 
   const {url, setToken} = useContext(StoreContext)
 
-  const [currState, setCurrState] = useState('Iniciar sesión')
+  const [currState, setCurrState] = useState('Login')
   const [data, setData] = useState({
     name: '',
     email: '',
@@ -26,16 +26,16 @@ export const LoginPoput = ({setShowLogin} ) => {
   }
 
   const onLogin = async (event) =>{
-    event.preventDefault()
+    event.preventDefault()  
     let newUrl = url
-    if(currState === 'Iniciar sesión'){
+    if(currState === 'Login'){
       newUrl += '/api/user/login'
     }
     else{
       newUrl += '/api/user/register'
     }
 
-    const response = await axios.post(newUrl, data)
+    const response = await axios.post(newUrl,data)
 
     if(response.data.success){
       setToken(response.data.token)
@@ -58,6 +58,7 @@ export const LoginPoput = ({setShowLogin} ) => {
 
       <div className='login-poput'>
         <form  onSubmit={ onLogin} className="login-poput-container">
+
           <div className="login-poput-title">
              <h2>{currState} </h2>
              <img 
@@ -66,15 +67,15 @@ export const LoginPoput = ({setShowLogin} ) => {
           </div>
 
           <div className='login-poput-inputs'>
-            {currState === 'Login' ? <></> :
-
-            <input
-             value={data.name}
-             onChange={ onChangeHandler}
-             name='name' 
-             type="text" 
-             placeholder="Tu Nombre" 
-             required />
+            {currState === 'Login'
+             ? <></>
+             : <input
+              value={data.name}
+              onChange={onChangeHandler}
+              name='name' 
+              type="text" 
+              placeholder="Tu Nombre" 
+              required />
             
             }
 
@@ -106,7 +107,7 @@ export const LoginPoput = ({setShowLogin} ) => {
             <p>Estoy de acuerdo con los términos y condiciones</p>
           </div>
           {
-            currState === 'Iniciar sesión' ?
+            currState === 'Login' ?
             <p> Create Una Cuenta?
               <span onClick={()=>setCurrState('Sign Up')}>Haz clic aquí</span>
             </p>

@@ -1,9 +1,10 @@
 .header{
   height:34vw;
-  margin:30px auto;
+  margin:0px auto;
   background:url('/header_img.png') no-repeat;
   background-size:contain;
   position:relative;
+  top: -25px;
 }
 
 .header-contents{
@@ -22,11 +23,12 @@
   font-weight: 500;
   color: white;
   font-size: max(4.5vw, 22px);
+  font-size: max(5vw, 28px);
 }
 
 .header-contents p{
   color: white;
-  font-size: 1vw;
+  font-size: 1.3vw;
 
 }
 
@@ -38,6 +40,19 @@
   background-color: white;
   font-size: max(2vw, 13px);
   border-radius: 50px;
+  transition: .3s;
+  /* padding: .7vw 1.5vw; */
+
+
+}
+
+.header-contents button:hover{
+  /* padding: .7vw 1.5vw; */
+  transform: scale(1.1);
+  background-color: #8d0d6f;
+  color: #f3ffff;
+  border: 1px solid #f8f8f1;
+  margin-top: 20px;
 
 }
 
