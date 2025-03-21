@@ -110,7 +110,7 @@
   color: tomato;
 }
 
-@media (max-width: 1050px){
+@media (max-width:1050px){
   .navbar .logo{
     width: 140px;
   }
@@ -157,8 +157,6 @@
 }
 
 @media (max-width: 750px){
-  
-
   .navbar-menu{
     display: none;
   }

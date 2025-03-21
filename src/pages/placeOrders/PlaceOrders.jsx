@@ -1,7 +1,7 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import './PlaceOrders.css'
 import { StoreContext } from '../../context/StoreContext'
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 export const PlaceOrders = () => {
@@ -164,18 +164,19 @@ export const PlaceOrders = () => {
                 <hr />
                 <div className="cart-total-details">
                   <p>Tarifa de envío</p>
-                  <p>${getTotalCartAmount() === 0 ? 0 : 2} </p>
+                  <p>$ {getTotalCartAmount() === 0 ? 0 : 2} </p>
                 </div>
                 <hr />
                 <div className="cart-total-details">
                   <b>Total</b>
-                  <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2} </b>
+                  <b>$ {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2} </b>
                 </div>
               </div>
-                <button type='submit' onClick={()=>Navigate('/order')}>PROCEDER AL PAGO</button>
+                <button type='submit' onClick={()=>navigate('/order')}>PROCEDER AL PAGO</button>
             </div>
 
       </div>
     </form>
   )
 }
+

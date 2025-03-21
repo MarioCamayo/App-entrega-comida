@@ -26,38 +26,43 @@ export const LoginPoput = ({setShowLogin} ) => {
   }
 
   const onLogin = async (event) =>{
-    event.preventDefault()  
-    let newUrl = url
-    if(currState === 'Login'){
-      newUrl += '/api/user/login'
-    }
-    else{
-      newUrl += '/api/user/register'
-    }
+      event.preventDefault()  
+      let newUrl = url + (currState === 'Login' ? '/api/user/login' : '/api/user/register');
 
-    const response = await axios.post(newUrl,data)
+      // let newUrl = url
+      // if(currState === 'Login'){
+      //   newUrl +='/api/user/login'
+      // }
+      // else{
+      //   newUrl += '/api/user/register'
+      // }
+      try{
+          const response = await axios.post(newUrl,data, {
+            headers: { "Content-Type": "application/json" }
+          })
 
-    if(response.data.success){
-      setToken(response.data.token)
-      localStorage.setItem('token', response.data.token)
-      setShowLogin(false)
-    }
-    else{
-      alert('Error')
-       
-    }
-  }
-
-    // useEffect(()=>{
-    //   console.log(data)
+          if(response.data.success){
+            setToken(response.data.token)
+            localStorage.setItem('token', response.data.token)
+            setShowLogin(false)
+          }
+          else{
+            alert(response.data.message); // Mostramos el mensaje real del backend
+            
+          }
+        }
+        catch(error){
+          console.error("Error en la solicitud:", error);
+          alert(error.response?.data?.message ||"Error en la conexión con el servidor");
+        }
+  };
       
-      
-    // },[data])
+   
 
   return (
 
       <div className='login-poput'>
-        <form  onSubmit={ onLogin} className="login-poput-container">
+        <form  onSubmit={onLogin} className="login-poput-container">
 
           <div className="login-poput-title">
              <h2>{currState} </h2>
@@ -67,7 +72,7 @@ export const LoginPoput = ({setShowLogin} ) => {
           </div>
 
           <div className='login-poput-inputs'>
-            {currState === 'Login'
+            {currState ==='Login'
              ? <></>
              : <input
               value={data.name}
